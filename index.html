@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseñador Freelancer</title>
+    <link rel="preload" href="CSS/normalize.css" as="style">
+    <link rel="stylesheet" href="CSS/normalize.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet"> 
+    <link rel="preload" href="CSS/styles.css" as="style">   <!--Carga más rápido el styles-->
+    <link href="CSS/styles.css" rel="stylesheet">           <!--Cargando el archivo css-->
+</head>
+<body>
+    <header>
+        <h1 class="titulo">Juan Ocampo <span>Freelancer</span></h1>   <!-- header siempre va con h1-->
+    </header>
+
+    <div class="nav-bg">            <!--Abarca todo el espacio visible en el navegador y lo centra-->
+        <nav class="navegacion-principal contenedor">
+            <a href="#">Inicio</a> <!--href es un atributo para direccionar a otras páginas-->
+            <a href="#">Sobre mí</a>    <!--Múltiples enlaces necesitan la etiqueta <nav>-->
+            <a href="#">Clientes</a>
+            <a href="#">Contacto</a>
+        </nav>
+    </div>
+
+    <section class="hero">
+        <div class="contenido-hero">
+            <h2>Diseño y desarrollo web <span>Freelancer</span></h2> <!--section siempre va con h"x", a excepción del h1 porque es más importante-->
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-pin" width="64" height="64" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffec00" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <circle cx="12" cy="11" r="3" />
+                <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
+            </svg>
+            </svg>
+            <p>Taxco de Alarcón, Guerrero</p>
+
+            <a class="boton" href="#">Contactar</a>
+        </div>
+    </section>
+
+    <main class="contenedor sombra"> <!--Contenido principal del sitio web. El contenedor y la sombra deben ir en lo principal del programa-->
+        <h2>Mis servicios</h2>
+
+        <div class="servicios">     <!--Dividimos los servicios todos juntos en una clase-->
+            <section class='servicio'>
+                <h3>Diseño Web</h3>
+                <div class="iconos">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-browser" width="60" height="60" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <rect x="4" y="4" width="16" height="16" rx="1" />
+                        <line x1="4" y1="8" x2="20" y2="8" />
+                        <line x1="8" y1="4" x2="8" y2="8" />
+                    </svg>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum nec ipsum consequat sodales. Mauris metus arcu, dictum in tincidunt eu, suscipit et nunc.</p>
+            </section>
+            
+            <section class='servicio'>
+                <h3>Aplicaciones Web</h3>
+                <div class="iconos">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-python" width="60" height="60" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M12 9h-7a2 2 0 0 0 -2 2v4a2 2 0 0 0 2 2h3" />
+                        <path d="M12 15h7a2 2 0 0 0 2 -2v-4a2 2 0 0 0 -2 -2h-3" />
+                        <path d="M8 9v-4a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v5a2 2 0 0 1 -2 2h-4a2 2 0 0 0 -2 2v5a2 2 0 0 0 2 2h4a2 2 0 0 0 2 -2v-4" />
+                        <line x1="11" y1="6" x2="11" y2="6.01" />
+                        <line x1="13" y1="18" x2="13" y2="18.01" />
+                      </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-terminal-2" width="60" height="60" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M8 9l3 3l-3 3" />
+                        <line x1="13" y1="15" x2="16" y2="15" />
+                        <rect x="3" y="4" width="18" height="16" rx="2" />
+                    </svg>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum nec ipsum consequat sodales. Mauris metus arcu, dictum in tincidunt eu, suscipit et nunc.</p>
+            </section>
+            
+            <section class='servicio'>
+                <h3>E-Commerce</h3>
+                <div class="iconos">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-credit-card" width="60" height="60" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <rect x="3" y="5" width="18" height="14" rx="3" />
+                        <line x1="3" y1="10" x2="21" y2="10" />
+                        <line x1="7" y1="15" x2="7.01" y2="15" />
+                        <line x1="11" y1="15" x2="13" y2="15" />
+                    </svg>
+                </div> 
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum nec ipsum consequat sodales. Mauris metus arcu, dictum in tincidunt eu, suscipit et nunc.</p>
+            </section>
+        </div>              <!--Cierre de la clase de servicios-->
+    
+
+    <section>
+        <h2>Contacto</h2>
+        <!--Añadimos la clase "Formulario" para un contenedor para el formulario-->
+        <form class="formulario">          <!--Fieldset va junto con "form" es un campo-->
+            <fieldset>  <!--Fieldset nos permite juntar una serie de campos-->
+                <legend>Contáctanos llenando todos los campos</legend>
+
+                <div class="contenedor-campos">
+                    <div class="campo">             <!--Para nth-child este es el 1-->
+                        <label>Nombre: </label>
+                        <input class="tipe-text" type="text" placeholder="Tu nombre">
+                    </div>
+
+                    <div class="campo">             <!--Para nth-child este es el 2-->
+                        <label>Teléfono: </label>
+                        <input class="tipe-text" type="tel" placeholder="Tu Teléfono">
+                    </div>
+
+                    <div class="campo">             <!--Para nth-child este es el 3-->
+                        <label>Correo: </label>
+                        <input class="tipe-text" type="email" placeholder="Tu Email">
+                    </div>
+
+                    <div class="campo">             <!--Para nth-child este es el 4-->
+                        <label>Mensaje: </label>
+                        <textarea class="tipe-text" placeholder="Escriba un mensaje..."></textarea>
+                    </div>
+                </div>  
+                    <div class="enviar alinear-derecha flex">
+                        <!--En "type" submit es para un botón para presionar -->
+                        <input class="boton w-sm-100" type="submit" value="Enviar"> <!--En "value" va el nombre de ese botón.-->
+                    </div>
+            </fieldset>
+        </form>
+    </section>
+    </main>
+
+    <footer class="footer">
+        <p>Todos los derechos reservados - Juan Ocampo Freelancer</p>
+    </footer>
+
+</body>
+</html>

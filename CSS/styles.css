@@ -1,0 +1,291 @@
+:root { /* Variables de CSS o Custom properties*/
+    --blanco: #FFFFFF;
+    --oscuro: #212121;
+    --primaro: #ffc107;
+    --secundario: #0097A7;
+    --gris: #757575;
+    --gris-claro: #dfe9f3;
+}
+
+/** Globales **/
+html{   /*Este código hay que usarlo en todos los proyectos */
+    font-size: 62.5%;
+    box-sizing: border-box;     /*No borrar */
+    scroll-snap-type: y mandatory;
+}
+
+/** Scroll Snap **/
+.servicios,
+.navegacion-principal,
+.formulario{
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+
+*, *:before, *:after {          /* Provoca que el padding se ignore y tome como límites el Height solamente */
+    box-sizing: inherit;        /* Esta línea no hay que borrarla, pues el padding distorsiona los pixeles que deseamos */
+  }
+  
+
+body{
+    font-size: 16px;    /** 1rem = 10px**/
+    font-family: 'Roboto', sans-serif;
+    background-image: linear-gradient(to top, var(--gris-claro) 0%, var(--blanco) 100%); /* Degradado */
+}
+/* Definimos las reglas de la tipografía */
+h1{
+    font-size: 3.8rem;
+}
+
+h2{
+    font-size: 2.8rem;
+    color:floralwhite;
+}
+
+h3{
+    font-size: 1.8rem;
+}
+
+h1,h2,h3{
+    text-align: center;
+}
+p{
+    color: floralwhite;
+}
+.titulo{
+    margin: 1rem 1rem;
+}
+.titulo span{
+    font-size: 2rem;
+}
+
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto; /* Valores tomados sobre las manecillas del reloj */
+}
+
+.boton{
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 2rem 3 rem;        /* Dándole margen */
+    margin-top: 3rem;           /* Separación con la parte de arriba */
+    font-size: 1.5rem;
+    text-decoration: none;      /* Quitar la letra subrayada */
+    text-transform: uppercase;  /* Poniendo en mayúsculas */
+    font-weight: bold;
+    border-radius: .5rem;       /* Dar el efecto redondeado */
+    width: 90%;                 /* Lo coloca al 90% de la pantalla */
+    text-align: center;         /* Se alinea (Formato para móviles) */
+    border: none;
+}
+
+.boton:hover{                   /* Regresa el cursor de la mano para dar click" */
+    cursor: pointer;
+}
+
+.sombra{                        /* Este es el cuadro que contiene los servicios */
+    box-shadow: 8px 15px 17px -1px rgba(0,0,0,0.45);
+    -webkit-box-shadow: 8px 15px 17px -1px rgba(0,0,0,0.45);
+    -moz-box-shadow: 8px 15px 17px -1px rgba(0,0,0,0.45);
+    background-color: var(--oscuro);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+@media (min-width: 768px) {     /* Acomodando para dar el formato para teléfonos móviles */
+    .boton{
+        width: auto;            /* Reinicia el valor cuando el dipositivio es mayor que 768px */
+    }                           /* Es decir, los dispositivos con 768px tendrán el botón colocado más grande en el centro */
+}
+
+/** UTILIDADES **/
+.w-sm-100{
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .w-sm-100{
+        width: auto;
+    }
+    .alinear-derecha{
+        justify-content: flex-end;
+    }
+}
+.w-sm-auto{
+    width: auto;
+}
+
+
+
+.flex{
+    display: flex;
+}
+
+/** Navegación Principal **/
+.nav-bg{
+    background-color: var(--oscuro);
+}
+
+.navegacion-principal{
+    display: flex;      /*Nos da mayores propiedades para mover el contenido*/
+    flex-direction: column;
+}
+@media (min-width: 480px) {     /*Funciona como un IF*/
+    .navegacion-principal{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+.navegacion-principal a{        /*Le pone color únicamente a los botones*/
+    display:block;
+    text-align: center;
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem;
+}
+
+.navegacion-principal a:hover{
+    background-color: var(--gris-claro);
+    color: var(--oscuro)
+}
+ 
+.hero{
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;               /* Por default, las imágenes se repiten siempre al hacer scroll*/
+    background-size: cover;                     /* Toma todo el ancho y se ve bastante bien */
+    height: 400px;
+    position: relative;                         /* El contenido padre siempre debe tener posición relativa */
+    margin-bottom: 2rem;                        /* Con esta línea se separa la foto (Hero) del cuadro (Contenido)*/
+}
+
+.contenido-hero{                                /* Para dar efecto a la imágen "hero" */
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);         /* Anterior */
+    background-color: rgb(0 0 0 / 70%);         /* Nueva */
+    width: 100%;
+    height: 100%;
+    /* Este código se puede utilizar para alinear verticalmente en todos los proyectos */
+    display: flex;
+    flex-direction: column;
+    align-items: center;                        /* Cuando se utiliza display y flex-direction, para centrar se utiliza align-items*/
+    justify-content: center;
+}
+
+.contenido-hero h2,
+.contenido-hero p{
+    color: var(--blanco);
+}
+
+.contenido-hero a{
+    padding: 1rem;
+    background-color: var(--secundario);
+    color: var(--blanco);
+}
+
+
+/** Servicios **/
+@media (min-width: 768px) {     /** Si la resolución es mayor de 768px, va a acomodar por tres columnas, si no, lo hará horizontalmente **/
+    .servicios{
+        display: grid;      /** Añadimos propiedades de CSS Grid: Nos permite acomodar el contenido en un área definida **/
+        grid-template-columns: repeat(3, 1fr);     /** Definimos las columnas || fr es una fracción. Es decir, cada una de las columnas (se repite 3 veces) toma una fracción del cuadro de servicios**/
+        column-gap: 2rem;                           /* Le damos un espacio de 10px (1rem) entre cada columna*/
+    }
+}
+
+.servicios h3{
+    color:seagreen;
+}
+
+.servicio .iconos{ /** Clase para cada los iconos de cada servicio individual **/
+    height: 15rem;
+    width: 15rem;
+    background-color: yellowgreen;
+    border-radius: 50%;             /** Código para hacer un círculo creando un cuadrado **/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.servicio{
+    /* Este código se puede utilizar para alinear verticalmente en todos los proyectos */
+    display: flex;
+    flex-direction: column;
+    align-items: center;                        /* Cuando se utiliza display y flex-direction, para centrar se utiliza align-items*/
+    justify-content: center;   
+}
+.servicio p{
+    line-height: 2;         /* Dando interlineado */
+    text-align: justify;
+}
+
+/** Contacto **/
+.formulario{
+    background-color: var(--oscuro);
+    width: min( 80rem,100%);        /* Utiliza el valor más pequeño */
+    margin: 0 auto;               /* Utilizar en formularios o aquello que no tenga un display flex (un elemento de tipo "block" en el inspeccionar elemento"*/
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.formulario fieldset{
+    border: none;
+    
+}
+
+.formulario legend{
+    font-size: 2rem;
+    font-weight: bold; 
+    margin-bottom: 2rem;  
+    color: tomato;
+    text-align: center;
+}
+
+
+@media (min-width: 768px) {
+    .contenedor-campos{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);       /* Definir el grid (2 columnas, cada una de 1fracción de pantalla */
+        grid-template-rows: auto auto 20rem;
+        column-gap: 1rem;                           /* Separar columnas */
+    }        
+    .campo:nth-child(3),
+    .campo:nth-child(4){                            /* Seleccionamos el campo número 3 (mirar el archivo HTML en la sección de campos)*/
+        grid-column: 1 / 3;                         /* El campo 3 (Email) irá de la columna 1 hasta la 3 (mirar acomodarelgrid.png) */
+    }
+}
+
+.campo{
+    margin-bottom: 1rem;
+}
+
+.campo label{
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.tipe-text{
+    width: 100%; /* Toma toda el área de la ventana */
+    border: none;
+    padding: 1.5rem;
+    border-radius: 1rem;
+}
+
+.enviar .boton{     /* Esta clase sólo es para modificar el botón de enviar, ya que utiliza la misma clase de botón de "Contactar" */
+    padding: 1rem;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.campo textarea{
+    height: 20rem;
+}
+
+/** Footer **/
+.footer{
+    text-align: center;
+    font-weight: bold;
+}
